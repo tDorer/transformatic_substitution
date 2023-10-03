@@ -3,13 +3,6 @@
 
 import tensorflow as tf
 import tensorflow_text
-from tensorflow import keras
-from tensorflow.keras.layers import Embedding, Dense, Dropout
-from tensorflow.keras.models import Model
-from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.losses import SparseCategoricalCrossentropy
-from tensorflow.keras.metrics import SparseCategoricalAccuracy
-from keras.models import load_model
 
 # Creating a function and keras class for positional embedding
 def positional_encoding(length, depth):
