@@ -94,8 +94,13 @@ def synth_tokenizer(steps, reagents):
 
 
 # This function simply plots cross attention heads
-def plot_attention_head(in_tokens, translated_tokens, attention):
-    translated_tokens = translated_tokens[1:]
+def plot_attention_head(attention, in_tokens, translated_tokens=0):
+    if in_tokens[0] == "<start>":
+        in_tokens = in_tokens[1:]
+    if translated_tokens == 0:
+        translated_tokens = in_tokens
+    elif translated_tokens[0] == "<start>":
+        translated_tokens = translated_tokens[1:]
     fig,ax = plt.subplots(1,1, figsize=(10,10), dpi=160)
     ax = plt.gca()
     ax.matshow(attention)
